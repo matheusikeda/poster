@@ -1,0 +1,175 @@
+\documentclass{sciposter}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[centertags]{amsmath}
+\usepackage{geometry}
+\geometry{paperwidth=90cm,paperheight=120cm,centering, textwidth=77cm, textheight=87cm, left=3cm, top=3cm}
+%\newfont{20pt}
+\usepackage{color}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{graphicx,colortbl}
+\usepackage{lipsum} %sugest\~ao de texto
+\usepackage{proof}
+\usepackage{listings} % exibe codigos de linguagens
+\usepackage{showexpl} % exibe codigos de figuras
+
+
+\usepackage{multicol}
+
+%include lhs2TeX.fmt
+%include lhs2TeX.sty
+%include polycode.fmt
+
+\DeclareMathAlphabet{\mathkw}{OT1}{cmss}{bx}{n}
+%subst keyword a = "\K{" a "}"
+%subst conid a = "\C{" a "}"
+%subst varid a = "\V{" a "}"
+%subst numeral a = "\N{" a "}"
+%format Set = "\D{Set}"
+%format Nat = "\C{\mathbb{N}}"
+
+
+\definecolor{BoxCol}{RGB}{150,32,56}
+\definecolor{Verde}{RGB}{50,180,50}
+\newcommand{\nat}{\mathbb{N}}
+
+\newcommand{\cod}{\ttfamily\small}
+
+
+\newcommand{\tituloA}[1]{\Large{\emph{\textbf{\color{white}{#1}}}}}
+\newcommand{\tituloB}[1]{\Large{\emph{\textbf{\color{black}{#1}}}}}
+\renewcommand{\thesection}{\textcolor{white}{\arabic{section}}}
+\renewcommand{\thesubsection}{\textcolor{white}{\arabic{section}.\arabic{subsection}}}
+\newcommand{\R}{\mathbb{R}}
+
+\usepackage{color}
+\newcommand{\redFG}[1]{\textcolor[rgb]{0.6,0,0}{#1}}
+\newcommand{\greenFG}[1]{\textcolor[rgb]{0,0.4,0}{#1}}
+\newcommand{\blueFG}[1]{\textcolor[rgb]{0,0,0.8}{#1}}
+\newcommand{\orangeFG}[1]{\textcolor[rgb]{0.8,0.4,0}{#1}}
+\newcommand{\purpleFG}[1]{\textcolor[rgb]{0.4,0,0.4}{#1}}
+\newcommand{\yellowFG}[1]{\textcolor{yellow}{#1}}
+\newcommand{\brownFG}[1]{\textcolor[rgb]{0.5,0.2,0.2}{#1}}
+\newcommand{\blackFG}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\whiteFG}[1]{\textcolor[rgb]{1,1,1}{#1}}
+\newcommand{\yellowBG}[1]{\colorbox[rgb]{1,1,0.2}{#1}}
+\newcommand{\brownBG}[1]{\colorbox[rgb]{1.0,0.7,0.4}{#1}}
+
+\newcommand{\ColourStuff}{
+  \newcommand{\red}{\redFG}
+  \newcommand{\green}{\greenFG}
+  \newcommand{\blue}{\blueFG}
+  \newcommand{\orange}{\orangeFG}
+  \newcommand{\purple}{\purpleFG}
+  \newcommand{\yellow}{\yellowFG}
+  \newcommand{\brown}{\brownFG}
+  \newcommand{\black}{\blackFG}
+  \newcommand{\white}{\whiteFG}
+}
+
+\ColourStuff
+
+\newcommand{\D}[1]{\blue{\mathsf{#1}}}
+\newcommand{\C}[1]{\green{\mathsf{#1}}}
+\newcommand{\F}[1]{\green{\mathsf{#1}}}
+\newcommand{\V}[1]{\blue{\mathit{#1}}}
+\newcommand{\N}[1]{\purple{\mathit{#1}}}
+\newcommand{\K}[1]{\orange{\mathkw{#1}}}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{corollary}{Corolário}
+
+\begin{document}
+\colorbox{BoxCol}{
+    \begin{minipage}{\textwidth}
+      \color{white}{
+        \begin{center}
+          \huge{\textbf{\vspace{1cm} \\
+  Uso de lógica temporal linear para teste baseado em propriedades de sistemas embarcados 
+          \vspace{1cm} \\}}
+    \end{center}
+  }
+\end{minipage}
+}
+\title{} % n\~ao delete
+\author{\textbf{Matheus Takeshi Yamakawa Ikeda;Rodrigo Geraldo Ribeiro}}
+\institute{Universidade Federal de Ouro Preto - Campus Jo\~ao Monlevade}
+\email{\texttt{\{matheusikeda10;rodrigogribeiro\}@gmail.com}}
+
+\leftlogo[0.6]{logo.jpg} %logotipo da universidade
+%\rightlogo[1.3]{logoICEA.jpeg}
+%\nologos
+\qquad %espa\c{c}o
+\maketitle %gera titulo
+
+
+	\colorbox{BoxCol}{
+	  \begin{minipage}{\textwidth}
+	  	\color{white}{
+	    \begin{center}
+	   	  \huge{\textbf{\vspace{1cm} \\
+	  		 \Large{Encontro de Saberes{}}
+	   	  \vspace{1cm} \\}}
+	    \end{center}
+	}
+	  \end{minipage}
+	}
+
+	\quad
+
+  \begin{multicols}{3}{
+
+  %Paragrafo.
+  \setlength{\parindent}{2em}
+
+  \section*{\tituloA{Introdução}}
+    \Large Teste é a abordagem mais utilizada por desenvolvedores de todo o mundo para a garantia da qualidade de software. Uma abordagem inovadora para atividades de teste é o chamado teste baseado em propriedades, em que valores para teste são produzidos de forma automática e verificados com respeito a propriedades descritas como fórmulas da lógica de primeira ordem. 
+    \par Testar sistemas embarcados é uma tarefa complexa, sendo muitas vezes feita com o sistema em produção, o que pode acarretar o aumento do custo do desenvolvimento do software, além de não serem facilmente especificados utilizando fórmulas da lógica de primeira ordem. 
+    
+\section*{\tituloA{Objetivos}}
+O principal objetivo desse projeto é a especificação e implementação de uma biblioteca para teste baseado em propriedades da lógica temporal para o teste de sistemas embarcados usando a linguagem Haskell.
+
+\section*{\tituloA{Sintaxe da Lógica Temporal}}
+
+A lógica temporal é a base para a verificação, e neste projeto, usamos a LTL. Esta lógica permite fazer referência ao futuro e modela o tempo como uma sequência de estados.
+\par A sintaxe é dada como:
+\begin{itemize}
+	 \item Uma fórmula da LTL pode ser verdadeira ou falsa.
+	 \item Todos os átomos em algum conjunto Átomos são fórmulas da LTL.
+	 \item $\neg \phi$ é uma fórmula da LTL se $\phi$ for uma.
+	 \item Conectivos temporais: X (próximo estado), F (algum estado futuro), G (todos os estados futuros), U (até), R (solto) e W (fraco).
+\end{itemize}
+
+\section*{\tituloA{Semântica da Lógica Temporal}}
+
+Um sistema de transição é modelado através de estados(estrutura estática) e transições(estrutura dinâmica). Um modelo possui um conjunto de estados, relações de transição e um conjunto de proposições atômicas.
+\par A semântica dos operadores temporais é definida a partir de uma trajetória específica.
+\begin{itemize}
+	\item X $\phi$ ($\phi$ será válida no próximo estado)
+	\item F $\phi$ (a fórmula $\phi$ será válida em algum estado futuro)
+	\item G $\phi$ ($\phi$ sempre será válida)
+	\item $\phi _{1}$ U $\phi _{2}$ ($\phi _{1}$ é válida até que $\phi _{2}$ seja)
+	\item $\phi _{1}$ R $\phi _{2}$ ($\phi _{2}$ tem que permanecer verdadeira até, e incluindo o momento em que $\phi _{1}$ se torne verdadeira)
+	\item $\phi _{1}$ W $\phi _{2}$ (como o conectivo U, porém não exige que $\phi _{2}$ tenha que ser válida, finalmente ao longo da trajetória) 
+\end{itemize}
+
+\section*{\tituloA{Resultados Obtidos}}
+O projeto teve como resultado a implementação de um teste de satisfazibilidade de fórmulas da LTL na linguagem funcional. Basicamente, uma função recursiva e um novo tipo de dados nomeado LTL.\\
+checkLTL :: Interp a -$>$ LTL -$>$ [Env a] -$>$ Bool	
+
+\section*{\tituloA{Conclusões}}
+Através de estudos sobre as bibliotecas, foi possível realizar o teste de satisfazibilidade, mas não todo os objetivos propostos inicialmente dentro do período de vigência do projeto. As atividades finalizaram-se antes da implementação em um sistema embarcado, porém até o momento de estudo, pudemos adquirir muitos conhecimentos nunca estudados anteriormente.
+
+  \section*{\tituloA{Referências}}
+  \renewcommand{\section}[2]{}%
+  \bibliographystyle{plain}
+  \bibliography{bib}
+
+
+  }\end{multicols}
+
+
+
+\end{document}
