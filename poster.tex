@@ -97,7 +97,8 @@
 \author{\textbf{Matheus Takeshi Yamakawa Ikeda;Rodrigo Geraldo Ribeiro}}
 \institute{Universidade Federal de Ouro Preto - Campus Jo\~ao Monlevade}
 \email{\texttt{\{matheusikeda10;rodrigogribeiro\}@gmail.com}}
-
+\\
+\\
 \leftlogo[0.6]{logo.jpg} %logotipo da universidade
 %\rightlogo[1.3]{logoICEA.jpeg}
 %\nologos
@@ -125,16 +126,15 @@
   \setlength{\parindent}{2em}
 
   \section*{\tituloA{Introdução}}
-    \Large Teste é a abordagem mais utilizada por desenvolvedores de todo o mundo para a garantia da qualidade de software. Uma abordagem inovadora para atividades de teste é o chamado teste baseado em propriedades, em que valores para teste são produzidos de forma automática e verificados com respeito a propriedades descritas como fórmulas da lógica de primeira ordem. 
+    \Large Teste é a abordagem mais utilizada por desenvolvedores de todo o mundo para a garantia da qualidade de software, podendo custar cerca de 50 $\%$ do custo \cite{myers}. Uma abordagem inovadora para atividades de teste é o chamado teste baseado em propriedades, em que valores para teste são produzidos de forma automática e verificados com respeito a propriedades descritas como fórmulas da lógica de primeira ordem. 
     \par Testar sistemas embarcados é uma tarefa complexa, sendo muitas vezes feita com o sistema em produção, o que pode acarretar o aumento do custo do desenvolvimento do software, além de não serem facilmente especificados utilizando fórmulas da lógica de primeira ordem. 
     
 \section*{\tituloA{Objetivos}}
 O principal objetivo desse projeto é a especificação e implementação de uma biblioteca para teste baseado em propriedades da lógica temporal para o teste de sistemas embarcados usando a linguagem Haskell.
 
 \section*{\tituloA{Sintaxe da Lógica Temporal}}
-
-A lógica temporal é a base para a verificação, e neste projeto, usamos a LTL. Esta lógica permite fazer referência ao futuro e modela o tempo como uma sequência de estados.
-\par A sintaxe é dada como:
+A verificação através de modelos tem uma abordagem automática, baseada em modelos, de verificação de propriedades, desenvolvida para sistemas concorrentes reativos.\cite{huth}
+\par A lógica temporal é a base para a verificação, e neste projeto, usamos a LTL. Esta lógica permite fazer referência ao futuro e modela o tempo como uma sequência de estados. A sintaxe é dada como:
 \begin{itemize}
 	 \item Uma fórmula da LTL pode ser verdadeira ou falsa.
 	 \item Todos os átomos em algum conjunto Átomos são fórmulas da LTL.
@@ -163,10 +163,9 @@ checkLTL :: Interp a -$>$ LTL -$>$ [Env a] -$>$ Bool
 Através de estudos sobre as bibliotecas, foi possível realizar o teste de satisfazibilidade, mas não todo os objetivos propostos inicialmente dentro do período de vigência do projeto. As atividades finalizaram-se antes da implementação em um sistema embarcado, porém até o momento de estudo, pudemos adquirir muitos conhecimentos nunca estudados anteriormente.
 
   \section*{\tituloA{Referências}}
-  \renewcommand{\section}[2]{}%
+  \renewcommand{\section}[2]{}
   \bibliographystyle{plain}
-  \bibliography{bib}
-
+  \bibliography{ref}
 
   }\end{multicols}
 
